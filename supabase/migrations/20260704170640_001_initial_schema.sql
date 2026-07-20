@@ -30,8 +30,8 @@ This migration creates the complete database structure for the Asset Management 
 5. Indexes added for frequently queried columns
 */
 
--- Enable UUID extension
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- Enable UUID extension for gen_random_uuid()
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 -- 1. ROLES TABLE
 CREATE TABLE IF NOT EXISTS roles (

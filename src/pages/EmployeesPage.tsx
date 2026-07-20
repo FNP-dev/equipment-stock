@@ -47,7 +47,7 @@ export default function EmployeesPage() {
   async function fetchEmployees() {
     try {
       const [empRes, locRes, assetsRes] = await Promise.all([
-        supabase.from('employees').select('*, location:locations(*)').eq('is_active', true).order('first_name'),
+        supabase.from('employees').select('*').eq('status', 'active').order('first_name'),
         supabase.from('locations').select('*').eq('is_active', true).order('name'),
         supabase.from('assets').select('assigned_to').eq('is_active', true)
       ]);

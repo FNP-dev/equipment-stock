@@ -1,11 +1,11 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { Asset, Category, Location, Status, Employee } from '../lib/types';
 import { useAuth } from '../contexts/AuthContext';
 import Card from '../components/Card';
 import Button from '../components/Button';
-import Input from '../components/Input';
+/* import Input from '../components/Input'; */
 import Select from '../components/Select';
 import EmptyState from '../components/EmptyState';
 import { PageLoader } from '../components/Loading';
@@ -14,7 +14,7 @@ import {
   ChevronLeft, ChevronRight, ArrowUpDown
 } from 'lucide-react';
 import { format } from 'date-fns';
-import { pl } from 'date-fns/locale';
+/* import { pl } from 'date-fns/locale'; */
 
 export default function AssetsPage() {
   const { isManagerOrAdmin } = useAuth();
@@ -178,11 +178,12 @@ export default function AssetsPage() {
             placeholder="Wszyscy pracownicy"
           />
 
-          {hasActiveFilters && (
-            <Button variant="ghost" onClick={clearFilters} icon={<FilterX className="w-4 h-4" />}>
+         
+            <Button variant="ghost" onClick={clearFilters} 
+            disabled={!hasActiveFilters} icon={<FilterX className="w-4 h-4" />}>
               Wyczyść
             </Button>
-          )}
+          
         </div>
       </Card>
 

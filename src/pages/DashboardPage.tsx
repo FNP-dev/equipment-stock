@@ -40,7 +40,7 @@ export default function DashboardPage() {
         supabase.from('assets').select('*, category:categories(*), status:statuses(*)').order('created_at', { ascending: false }).limit(5),
         supabase.from('asset_history').select('*, asset:assets(name)').order('performed_at', { ascending: false }).limit(10)
       ]);
-
+console.log('employeesResult', employeesResult.count)
       const assets = assetsResult.data || [];
       const statuses = {
         total: assets.length,
