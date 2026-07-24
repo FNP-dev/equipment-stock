@@ -4,8 +4,8 @@ import { Package, Mail, Lock, User, AlertCircle, Loader2 } from 'lucide-react';
 
 export default function LoginPage() {
   const [isSignUp, setIsSignUp] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('lovable37@proton.me');
+  const [password, setPassword] = useState('lN]%}/8[wOa7txX');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [error, setError] = useState<string | null>(null);
